@@ -23,7 +23,7 @@ categorical_features = {
     'Compensation_and_Benefits': ['type0', 'type1', 'type2', 'type3', 'type4']
 }
 
-st.title('Attrition Rate Prediction')
+st.title('Analyze Retention Rate')
 
 input_data = {}
 
@@ -36,5 +36,5 @@ if st.button('Analyze'):
     prediction = model.predict(input_df)
     attrition = prediction[0] * 100
     retention = (1 - prediction[0])*100 
-    st.write(f'The attrition rate is: {attrition:.2f}%')
-    st.write(f'The retention rate is: {retention:.2f}%')
+    st.write(f'Prediksi attrition rate: {attrition:.2f}%')
+    st.write(f'Analisa retention rate menjadi: {retention:.2f}%')
