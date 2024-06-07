@@ -11,6 +11,6 @@ streamlit run app.py
 ```
 
 Hasilnya seperti ini interfacenya
-<img src="img/awal1.png">
+<img src="img/awalen.png">
 <img src="img/awal2.png">
 <img src="img/outputen.png">
