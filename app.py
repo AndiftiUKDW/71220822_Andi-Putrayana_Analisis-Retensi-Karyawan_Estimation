@@ -5,7 +5,7 @@ import pandas as pd
 model = joblib.load('model.pkl')
 
 numerical_features = [
-    'Age', 'Time_of_service', 'Time_since_promotion', 'growth_rate', 
+    'Age','Education_Level', 'Time_of_service', 'Time_since_promotion', 'growth_rate', 
     'Travel_Rate', 'Post_Level', 'Pay_Scale', 'Work_Life_balance', 
     'VAR1', 'VAR2', 'VAR3', 'VAR4', 'VAR5', 'VAR6', 'VAR7'
 ]
@@ -32,6 +32,9 @@ for feature, categories in categorical_features.items():
 for feature in numerical_features:
     input_data[feature] = st.number_input(f'Enter {feature}', value=0.0)
 input_df = pd.DataFrame([input_data])
-if st.button('Predict'):
+if st.button('Analyze'):
     prediction = model.predict(input_df)
-    st.write(f'The predicted attrition rate is: {prediction[0]:.4f}')
+    attrition = prediction[0] * 100
+    retention = (1 - prediction[0])*100 
+    st.write(f'The attrition rate is: {attrition:.2f}%')
+    st.write(f'The retention rate is: {retention:.2f}%')
