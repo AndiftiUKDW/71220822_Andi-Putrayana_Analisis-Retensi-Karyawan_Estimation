@@ -1,3 +1,4 @@
+Untuk Training sudah ada di ipynb, untuk hasil output dengan dataset test sudah ada di ipynb.<br>
 Menggunakan Streamlit untuk Interfacenya <br>
 Setup Env terlebih dahulu <br>
 ```
